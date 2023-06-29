@@ -1,3 +1,7 @@
+/**
+ * Example: node chatbot-with-personalities.js --personality='rude'
+ */
+
 //The readline module is used to read user input from the command line.
 import readline from 'readline';
 
