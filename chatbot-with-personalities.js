@@ -37,11 +37,11 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
+const argv = yargs(hideBin(process.argv)).argv;
+
+if (argv.personality === '') argv.personality = 'friendly and helpful';
+
 function main() {
-  const argv = yargs(hideBin(process.argv)).argv;
-
-  if (argv.personality === '') argv.personality = 'friendly and helpful';
-
   const initial_prompt = `You are a conversational chatbot. Your personality is: ${argv.personality}`;
   const messages = [{ role: 'system', content: initial_prompt }];
 
